@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class Garage {
   private int size = 10;
-  private ArrayList<Car> cars = new ArrayList<Car>();
+  private List<Car> cars = new ArrayList<Car>();
   private String[] brands = { "Skoda", "Jeep", "Audi", "Kia", "Mitsubishi", "Volkswagen", "Buick", "Mercedes Benz",
       "Audi", "Honda" };
   private String[] models = { "Octavia", "Gladiator", "A5", "Rio", "Mirage G4", "Golf R", "Enclave", "E-Class Wagon",
@@ -30,7 +31,7 @@ public class Garage {
     return new Car((int) (generateRandomNumber(1, 100)), brand, model);
   }
 
-  private void sortCars(ArrayList<Car> cars) {
+  private void sortCars(List<Car> cars) {
     Collections.sort(cars, Comparator.comparing(Car::getGasolineLevel));
   }
 
@@ -39,7 +40,7 @@ public class Garage {
 
     for (int i = 0; i < this.size; i++) {
       System.out.println(
-          "Car " + (i + 1) + " " + this.cars.get(i).getBrand() + " " + this.cars.get(i).getModel() + ": "
+          "Car " + (i + 1) + ": " + this.cars.get(i).getBrand() + " " + this.cars.get(i).getModel() + ": "
               + this.cars.get(i).getGasolineLevel() + "%");
     }
   }
