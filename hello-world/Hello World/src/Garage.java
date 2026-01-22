@@ -15,9 +15,7 @@ public class Garage {
     this.size = size;
 
     for (int i = 0; i < this.size; i++) {
-      int carBrandIndex = (int) this.generateRandomNumber(0, 9);
-
-      cars.add(carFactory(this.brands[carBrandIndex], this.models[carBrandIndex]));
+      this.addCar();
     }
 
     this.sortCars(this.cars);
@@ -46,9 +44,19 @@ public class Garage {
   }
 
   public void addCar() {
-    this.size++;
+    if (this.cars.size() == this.size) {
+      this.size++;
+    }
 
     int carBrandIndex = (int) this.generateRandomNumber(0, 9);
     cars.add(carFactory(this.brands[carBrandIndex], this.models[carBrandIndex]));
+  }
+
+  public void addCar(String brand, String model) {
+    if (this.cars.size() == this.size) {
+      this.size++;
+    }
+
+    cars.add(carFactory(brand, model));
   }
 }
