@@ -56,6 +56,6 @@ public class Car {
     }
 
     public String getSpeed() {
-        return this.speed + "km/h";
+        return this.speed + " km/h";
     }
 }
