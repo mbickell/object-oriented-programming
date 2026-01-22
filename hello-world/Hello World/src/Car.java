@@ -33,6 +33,7 @@ public class Car {
 
     public void stopEngine() {
         this.isEngineRunning = false;
+        this.speed = 0;
     }
 
     public String accelerate() {
