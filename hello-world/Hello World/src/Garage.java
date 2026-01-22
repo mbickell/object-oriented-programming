@@ -59,4 +59,8 @@ public class Garage {
 
     cars.add(carFactory(brand, model));
   }
+
+  public List<Car> getCars() {
+    return this.cars;
+  }
 }
