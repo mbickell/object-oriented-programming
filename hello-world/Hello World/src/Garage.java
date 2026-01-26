@@ -4,17 +4,20 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Garage {
-  private int size = 10;
-  private List<Car> cars = new ArrayList<Car>();
+  private List<Car> cars;
   private String[] brands = { "Skoda", "Jeep", "Audi", "Kia", "Mitsubishi", "Volkswagen", "Buick", "Mercedes Benz",
       "Audi", "Honda" };
   private String[] models = { "Octavia", "Gladiator", "A5", "Rio", "Mirage G4", "Golf R", "Enclave", "E-Class Wagon",
       "RS6 Avant", "Prologue" };
 
-  public Garage(int size) {
-    this.size = size;
+  public Garage() {
+    this(10);
+  }
 
-    for (int i = 0; i < this.size; i++) {
+  public Garage(int size) {
+    this.cars = new ArrayList<Car>(size);
+
+    for (int i = 0; i < size; i++) {
       this.addCar();
     }
 
@@ -36,7 +39,7 @@ public class Garage {
   public void printCars() {
     System.out.println("Gas level of: ");
 
-    for (int i = 0; i < this.size; i++) {
+    for (int i = 0; i < this.cars.size(); i++) {
       System.out.println(
           "Car " + (i + 1) + ": " + this.cars.get(i).getBrand() + " " + this.cars.get(i).getModel() + ": "
               + this.cars.get(i).getGasolineLevel() + "%");
@@ -44,19 +47,11 @@ public class Garage {
   }
 
   public void addCar() {
-    if (this.cars.size() == this.size) {
-      this.size++;
-    }
-
     int carBrandIndex = (int) this.generateRandomNumber(0, 9);
     cars.add(carFactory(this.brands[carBrandIndex], this.models[carBrandIndex]));
   }
 
   public void addCar(String brand, String model) {
-    if (this.cars.size() == this.size) {
-      this.size++;
-    }
-
     cars.add(carFactory(brand, model));
   }
 
