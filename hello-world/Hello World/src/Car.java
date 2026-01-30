@@ -4,11 +4,13 @@ public class Car {
   private String model;
   private boolean isEngineRunning = false;
   private int speed = 0;
+  private int tyreCount;
 
-  public Car(int gasolineLevel, String brand, String model) {
+  public Car(int gasolineLevel, String brand, String model, int tyreCount) {
     this.gasolineLevel = gasolineLevel;
     this.brand = brand;
     this.model = model;
+    this.tyreCount = tyreCount;
   }
 
   public int getGasolineLevel() {
@@ -57,5 +59,13 @@ public class Car {
 
   public String getSpeed() {
     return this.speed + " km/h";
+  }
+
+  public int getTyreCount() {
+    return this.tyreCount;
+  }
+
+  public void setTyreCount(int tyreCount) {
+    this.tyreCount = tyreCount;
   }
 }
