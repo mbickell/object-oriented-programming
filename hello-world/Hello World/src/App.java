@@ -12,5 +12,7 @@ public class App {
     System.out.println(garage.getCars().get(0).getEngineStatus());
     garage.getCars().get(0).accelerate();
     System.out.println(garage.getCars().get(0).getSpeed());
+
+    System.out.println(Math.sqrt(garage.getCarCount()));
   }
 }
