@@ -2,9 +2,13 @@ public class Car {
   private int gasolineLevel;
   private String brand;
   private String model;
+  private int tyreCount;
   private boolean isEngineRunning = false;
   private int speed = 0;
-  private int tyreCount;
+
+  public Car() {
+    this(0, "No brand", "No model", 0);
+  }
 
   public Car(int gasolineLevel, String brand, String model, int tyreCount) {
     this.gasolineLevel = gasolineLevel;
@@ -17,44 +21,28 @@ public class Car {
     return this.gasolineLevel;
   }
 
+  public void setGasolineLevel(int gasolineLevel) {
+    this.gasolineLevel = gasolineLevel;
+  }
+
   public String getBrand() {
     return this.brand;
+  }
+
+  public void setBrand(String brand) {
+    this.brand = brand;
   }
 
   public String getModel() {
     return this.model;
   }
 
+  public void setModel(String model) {
+    this.model = model;
+  }
+
   public String getEngineStatus() {
     return this.isEngineRunning ? "Engine is running" : "Engine is stopped";
-  }
-
-  public void startEngine() {
-    this.isEngineRunning = true;
-  }
-
-  public void stopEngine() {
-    this.isEngineRunning = false;
-    this.speed = 0;
-  }
-
-  public String accelerate() {
-    if (!this.isEngineRunning) {
-      return "Engine is not running";
-    }
-
-    this.speed += 10;
-    return "Car accelerating";
-  }
-
-  public String brake() {
-    if (!this.isEngineRunning) {
-      return "Engine is not running";
-    }
-
-    this.speed = this.speed - 10 < 0 ? 0 : this.speed - 10;
-
-    return "Car braking";
   }
 
   public String getSpeed() {
@@ -67,5 +55,37 @@ public class Car {
 
   public void setTyreCount(int tyreCount) {
     this.tyreCount = tyreCount;
+  }
+
+  public void startEngine() {
+    this.isEngineRunning = true;
+  }
+
+  public void stopEngine() {
+    this.isEngineRunning = false;
+    this.speed = 0;
+  }
+
+  public String accelerate(int speed) {
+    if (!this.isEngineRunning) {
+      return "Engine is not running";
+    }
+
+    this.speed += speed;
+    return "Car accelerating";
+  }
+
+  public String accelerate() {
+    return this.accelerate(10);
+  }
+
+  public String brake() {
+    if (!this.isEngineRunning) {
+      return "Engine is not running";
+    }
+
+    this.speed = this.speed - 10 < 0 ? 0 : this.speed - 10;
+
+    return "Car braking";
   }
 }
