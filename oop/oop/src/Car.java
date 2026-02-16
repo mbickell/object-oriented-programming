@@ -11,10 +11,10 @@ public class Car {
   }
 
   public Car(int gasolineLevel, String brand, String model, int tyreCount) {
-    this.gasolineLevel = gasolineLevel;
+    this.gasolineLevel = gasolineLevel >= 0 ? gasolineLevel : 0;
     this.brand = brand;
     this.model = model;
-    this.tyreCount = tyreCount;
+    this.tyreCount = tyreCount >= 0 ? tyreCount : 0;
   }
 
   public int getGasolineLevel() {
@@ -54,6 +54,10 @@ public class Car {
   }
 
   public void setTyreCount(int tyreCount) {
+    if (tyreCount < 0) {
+      this.tyreCount = 0;
+    }
+
     this.tyreCount = tyreCount;
   }
 
