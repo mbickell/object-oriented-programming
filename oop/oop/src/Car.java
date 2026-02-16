@@ -22,6 +22,10 @@ public class Car {
   }
 
   public void setGasolineLevel(int gasolineLevel) {
+    if (gasolineLevel < 0) {
+      this.gasolineLevel = 0;
+    }
+
     this.gasolineLevel = gasolineLevel;
   }
 
