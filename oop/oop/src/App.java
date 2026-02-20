@@ -28,5 +28,6 @@ public class App {
     garage.removeCar(garage.getCars().get(1));
 
     garagePrinter.printCars(garage);
+    System.out.println(garage.getTotalTyres());
   }
 }

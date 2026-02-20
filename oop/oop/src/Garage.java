@@ -39,7 +39,7 @@ public class Garage {
   public int getTotalTyres() {
     int totalTyres = 0;
 
-    for (Car car : cars) {
+    for (Car car : this.cars) {
       totalTyres += car.getTyreCount();
     }
 
