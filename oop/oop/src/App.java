@@ -29,5 +29,7 @@ public class App {
 
     garagePrinter.printCars(garage);
     System.out.println(garage.getTotalTyres());
+
+    garage.getCars().forEach((car) -> car.startEngine());
   }
 }

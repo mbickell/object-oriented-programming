@@ -1,5 +1,11 @@
 public class Car {
-  private int gasolineLevel;
+  public enum EngineType {
+    GAS,
+    ELECTRIC
+  }
+
+  private EngineType engineType;
+  private int energyLevel;
   private String brand;
   private String model;
   private int tyreCount;
@@ -7,26 +13,35 @@ public class Car {
   private int speed = 0;
 
   public Car() {
-    this(0, "No brand", "No model", 0);
+    this(0, "No brand", "No model", 0, EngineType.GAS);
   }
 
-  public Car(int gasolineLevel, String brand, String model, int tyreCount) {
-    this.gasolineLevel = gasolineLevel >= 0 ? gasolineLevel : 0;
+  public Car(int energyLevel, String brand, String model, int tyreCount, EngineType engineType) {
+    this.engineType = engineType;
+    this.energyLevel = energyLevel >= 0 ? energyLevel : 0;
     this.brand = brand;
     this.model = model;
     this.tyreCount = tyreCount >= 0 ? tyreCount : 0;
   }
 
-  public int getGasolineLevel() {
-    return this.gasolineLevel;
+  public EngineType getEngineType() {
+    return engineType;
   }
 
-  public void setGasolineLevel(int gasolineLevel) {
-    if (gasolineLevel < 0) {
-      this.gasolineLevel = 0;
+  public void setEngineType(EngineType engineType) {
+    this.engineType = engineType;
+  }
+
+  public int getEnergyLevel() {
+    return this.energyLevel;
+  }
+
+  public void setEnergyLevel(int energyLevel) {
+    if (energyLevel < 0) {
+      this.energyLevel = 0;
     }
 
-    this.gasolineLevel = gasolineLevel;
+    this.energyLevel = energyLevel;
   }
 
   public String getBrand() {
@@ -67,6 +82,18 @@ public class Car {
 
   public void startEngine() {
     this.isEngineRunning = true;
+
+    switch (engineType) {
+      case ELECTRIC:
+        System.out.println("Starting electric engine (vrrrrrrr)");
+        break;
+      case GAS:
+        System.out.println("Starting gas engine (vroom)");
+        break;
+      default:
+        System.out.println("Starting engine");
+        break;
+    }
   }
 
   public void stopEngine() {
