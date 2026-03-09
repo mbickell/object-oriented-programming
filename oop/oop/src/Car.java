@@ -1,10 +1,4 @@
 public class Car {
-  public enum EngineType {
-    GAS,
-    ELECTRIC,
-    HYBRID
-  }
-
   private EngineType engineType;
   private int energyLevel;
   private String brand;
