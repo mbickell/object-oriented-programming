@@ -75,23 +75,12 @@ public class Car {
     this.tyreCount = tyreCount;
   }
 
-  public void startEngine() {
-    this.isEngineRunning = true;
+  public void setEngineRunning(boolean isEngineRunning) {
+    this.isEngineRunning = isEngineRunning;
+  }
 
-    switch (engineType) {
-      case ELECTRIC:
-        System.out.println("Starting electric engine (vrrrrrrr)");
-        break;
-      case GAS:
-        System.out.println("Starting gas engine (vroom)");
-        break;
-      case HYBRID:
-        System.out.println("Starting hybrid engine (vrr vroom)");
-        break;
-      default:
-        System.out.println("Starting engine");
-        break;
-    }
+  public void startEngine() throws Exception {
+    throw new Exception();
   }
 
   public void stopEngine() {

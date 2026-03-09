@@ -1,0 +1,16 @@
+public class ElectricCar extends Car {
+  public ElectricCar() {
+    this(0, "No brand", "No model", 0);
+  }
+
+  public ElectricCar(int energyLevel, String brand, String model, int tyreCount) {
+    super(energyLevel, brand, model, tyreCount, EngineType.ELECTRIC);
+  }
+
+  @Override
+  public void startEngine() {
+    this.setEngineRunning(true);
+
+    System.out.println("Starting electric engine (vrrrrrrr)");
+  }
+}

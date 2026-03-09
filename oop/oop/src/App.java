@@ -3,7 +3,7 @@ import java.util.List;
 
 public class App {
   public static void main(String[] args) throws Exception {
-    List<Car> cars = new ArrayList<Car>();
+    List<GasCar> cars = new ArrayList<GasCar>();
     CarFactory carFactory = new CarFactory();
     GaragePrinter garagePrinter = new GaragePrinter();
 

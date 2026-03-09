@@ -4,19 +4,19 @@ public class CarFactory {
   private String[] models = { "Octavia", "Recon", "A5", "Rio", "GX", "Clio", "Enclave", "G90",
       "A7", "Hornet" };
 
-  public Car generateCar(String brand, String model, int tyreCount, EngineType engineType) {
+  public GasCar generateCar(String brand, String model, int tyreCount) {
     int gasLevel = Utils.generateRandomNumber(1, 100);
-    return new Car(gasLevel, brand, model, tyreCount, engineType);
+    return new GasCar(gasLevel, brand, model, tyreCount);
   }
 
-  public Car generateCar() {
+  public GasCar generateCar() {
     int carBrandIndex = Utils.generateRandomNumber(0, 9);
     int tyreCount = Utils.generateRandomNumber(0, 4);
-    EngineType[] engineTypeArr = EngineType.values();
-    int engineTypeIndex = Utils.generateRandomNumber(0, engineTypeArr.length - 1);
+    // EngineType[] engineTypeArr = EngineType.values();
+    // int engineTypeIndex = Utils.generateRandomNumber(0, engineTypeArr.length -
+    // 1);
 
-    Car car = this.generateCar(this.brands[carBrandIndex], this.models[carBrandIndex], tyreCount,
-        engineTypeArr[engineTypeIndex]);
+    GasCar car = this.generateCar(this.brands[carBrandIndex], this.models[carBrandIndex], tyreCount);
     return car;
   }
 }
