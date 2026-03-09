@@ -1,7 +1,8 @@
 public class Car {
   public enum EngineType {
     GAS,
-    ELECTRIC
+    ELECTRIC,
+    HYBRID
   }
 
   private EngineType engineType;
@@ -89,6 +90,9 @@ public class Car {
         break;
       case GAS:
         System.out.println("Starting gas engine (vroom)");
+        break;
+      case HYBRID:
+        System.out.println("Starting hybrid engine (vrr vroom)");
         break;
       default:
         System.out.println("Starting engine");
