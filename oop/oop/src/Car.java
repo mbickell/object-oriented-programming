@@ -79,8 +79,8 @@ public class Car {
     this.isEngineRunning = isEngineRunning;
   }
 
-  public void startEngine() throws Exception {
-    throw new Exception();
+  public void startEngine() {
+    System.out.println("Starting Engine");
   }
 
   public void stopEngine() {

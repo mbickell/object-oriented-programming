@@ -4,31 +4,31 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Garage {
-  private List<GasCar> cars;
+  private List<Car> cars;
 
   public Garage() {
-    this(new ArrayList<GasCar>());
+    this(new ArrayList<Car>());
   }
 
-  public Garage(List<GasCar> cars) {
+  public Garage(List<Car> cars) {
     this.cars = cars;
 
     this.sortCars();
   }
 
   private void sortCars() {
-    Collections.sort(this.cars, Comparator.comparing(GasCar::getEnergyLevel));
+    Collections.sort(this.cars, Comparator.comparing(Car::getEnergyLevel));
   }
 
   public void addCar(GasCar car) {
     cars.add(car);
   }
 
-  public boolean removeCar(GasCar car) {
+  public boolean removeCar(Car car) {
     return cars.remove(car);
   }
 
-  public List<GasCar> getCars() {
+  public List<Car> getCars() {
     return Collections.unmodifiableList(this.cars);
   }
 
@@ -39,7 +39,7 @@ public class Garage {
   public int getTotalTyres() {
     int totalTyres = 0;
 
-    for (GasCar car : this.cars) {
+    for (Car car : this.cars) {
       totalTyres += car.getTyreCount();
     }
 
