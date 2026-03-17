@@ -13,4 +13,11 @@ public class GasCar extends Car {
 
     System.out.println("Starting gas engine (vroom)");
   }
+
+  @Override
+  public void stopEngine() {
+    this.setEngineRunning(false);
+
+    System.out.println("Stopping gas engine");
+  }
 }

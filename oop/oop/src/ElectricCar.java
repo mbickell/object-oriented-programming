@@ -13,4 +13,11 @@ public class ElectricCar extends Car {
 
     System.out.println("Starting electric engine (vrrrrrrr)");
   }
+
+  @Override
+  public void stopEngine() {
+    this.setEngineRunning(false);
+
+    System.out.println("Stopping electric engine");
+  }
 }
