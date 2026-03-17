@@ -7,7 +7,7 @@ public class App {
     CarFactory carFactory = new CarFactory();
     GaragePrinter garagePrinter = new GaragePrinter();
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i <= 10; i++) {
       cars.add(carFactory.generateCar());
     }
 

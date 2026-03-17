@@ -5,12 +5,15 @@ public class GaragePrinter {
     } else {
       System.out.println("Number\t\tBrand\t\tModel\t\tEnergy\t\tTyres\t\tEngine Type\t\t");
 
-      for (int i = 0; i < garage.getCars().size(); i++) {
-        Car currentCar = garage.getCars().get(i);
-        String message = (i + 1) + "\t\t" + currentCar.getBrand() + "\t\t" + currentCar.getModel() + "\t\t"
-            + currentCar.getEnergyLevel() + "%\t\t" + currentCar.getTyreCount() + "\t\t" + currentCar.getEngineType();
+      int i = 1;
+
+      for (Car car : garage.getCars()) {
+        String message = String.format("%d\t\t%s\t\t%s\t\t%d%%\t\t%d\t\t%s", i,
+            car.getBrand(), car.getModel(),
+            car.getEnergyLevel(), car.getTyreCount(), car.getEngineType());
 
         System.out.println(message);
+        i++;
       }
     }
   }
