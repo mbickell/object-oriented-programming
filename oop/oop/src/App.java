@@ -12,24 +12,20 @@ public class App {
     }
 
     Garage garage = new Garage(cars);
-
     garagePrinter.printCars(garage);
 
-    System.out.println(garage.getTotalTyres());
+    // System.out.println(garage.getCars().get(0).getEngineStatus());
+    // garage.getCars().get(0).startEngine();
+    // System.out.println(garage.getCars().get(0).getEngineStatus());
+    // garage.getCars().get(0).accelerate();
+    // System.out.println(garage.getCars().get(0).getSpeed());
 
-    System.out.println(garage.getCars().get(0).getEngineStatus());
-    garage.getCars().get(0).startEngine();
-    System.out.println(garage.getCars().get(0).getEngineStatus());
-    garage.getCars().get(0).accelerate();
-    System.out.println(garage.getCars().get(0).getSpeed());
+    // System.out.println(Math.sqrt(garage.getCarCount()));
 
-    System.out.println(Math.sqrt(garage.getCarCount()));
+    // garage.removeCar(garage.getCars().get(1));
 
-    garage.removeCar(garage.getCars().get(1));
+    // garage.getCars().forEach((car) -> car.startEngine());
 
-    garagePrinter.printCars(garage);
-    System.out.println(garage.getTotalTyres());
-
-    garage.getCars().forEach((car) -> car.startEngine());
+    // System.out.println("Total Tyres: " + garage.getTotalTyres());
   }
 }
