@@ -16,7 +16,7 @@ public class CarFactory {
       case 3:
         return new ElectricCar(gasLevel, brand, model, tyreCount);
       case 4:
-        return new FlyingCar(gasLevel, brand, model, tyreCount);
+        return new FlyingCar(gasLevel, brand, model, tyreCount, gasLevel);
       default:
         return new GasCar(gasLevel, brand, model, tyreCount);
     }
