@@ -9,15 +9,13 @@ public class HybridCar extends Car {
 
   @Override
   public void startEngine() {
-    setEngineRunning(true);
-
+    super.startEngine();
     System.out.println("Starting hybrid engine (vrr vroom)");
   }
 
   @Override
   public void stopEngine() {
-    setEngineRunning(false);
-
+    super.stopEngine();
     System.out.println("Stopping hybrid engine");
   }
 }

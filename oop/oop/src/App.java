@@ -4,6 +4,10 @@ public class App {
 
     createDemoCars(garage);
 
+    for (int i = 0; i < 5; i++) {
+      garage.getCars().get(i).startEngine();
+    }
+
     displayGarageIngo(garage);
   }
 

@@ -80,7 +80,7 @@ public class Car {
   }
 
   public void startEngine() {
-    System.out.println("Starting Engine");
+    this.isEngineRunning = true;
   }
 
   public void stopEngine() {
