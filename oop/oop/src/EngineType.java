@@ -1,5 +1,6 @@
 public enum EngineType {
   GAS,
   ELECTRIC,
-  HYBRID
+  HYBRID,
+  FLYING
 }
