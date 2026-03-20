@@ -20,7 +20,7 @@ public class Garage {
     Collections.sort(this.cars, Comparator.comparing(Car::getEnergyLevel));
   }
 
-  public void addCar(GasCar car) {
+  public void addCar(Car car) {
     cars.add(car);
   }
 

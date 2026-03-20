@@ -1,22 +1,19 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class App {
   public static void main(String[] args) throws Exception {
-    Garage garage = createDemoCars();
+    Garage garage = new Garage();
+
+    createDemoCars(garage);
 
     displayGarageIngo(garage);
   }
 
-  public static Garage createDemoCars() {
-    List<Car> cars = new ArrayList<Car>();
+  public static void createDemoCars(Garage garage) {
     CarFactory carFactory = new CarFactory();
 
-    for (int i = 0; i <= 10; i++) {
-      cars.add(carFactory.generateCar());
+    for (int i = 0; i < 10; i++) {
+      Car car = carFactory.generateCar();
+      garage.addCar(car);
     }
-
-    return new Garage(cars);
   }
 
   public static void displayGarageIngo(Garage garage) {
