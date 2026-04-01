@@ -1,5 +1,5 @@
 public class Car {
-  private EngineType engineType;
+  private Motor motor;
   private int energyLevel;
   private String brand;
   private String model;
@@ -8,23 +8,23 @@ public class Car {
   private int speed = 0;
 
   public Car() {
-    this(0, "No brand", "No model", 0, EngineType.GAS);
+    this(0, "No brand", "No model", 0, new GasMotor());
   }
 
-  public Car(int energyLevel, String brand, String model, int tyreCount, EngineType engineType) {
-    this.engineType = engineType;
+  public Car(int energyLevel, String brand, String model, int tyreCount, Motor motor) {
+    this.motor = motor;
     this.energyLevel = energyLevel >= 0 ? energyLevel : 0;
     this.brand = brand;
     this.model = model;
     this.tyreCount = tyreCount >= 0 ? tyreCount : 0;
   }
 
-  public EngineType getEngineType() {
-    return engineType;
+  public String getEngineType() {
+    return this.motor.getType();
   }
 
-  public void setEngineType(EngineType engineType) {
-    this.engineType = engineType;
+  public void setEngineType(Motor motor) {
+    this.motor = motor;
   }
 
   public int getEnergyLevel() {
@@ -80,10 +80,12 @@ public class Car {
   }
 
   public void startEngine() {
+    this.motor.start();
     this.isEngineRunning = true;
   }
 
   public void stopEngine() {
+    this.motor.stop();
     this.isEngineRunning = false;
     this.speed = 0;
   }

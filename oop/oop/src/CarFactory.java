@@ -6,19 +6,17 @@ public class CarFactory {
 
   public Car generateCar(String brand, String model, int tyreCount) {
     int gasLevel = Utils.generateRandomNumber(1, 100);
-    int randomCarSelector = Utils.generateRandomNumber(1, 4);
+    int randomCarSelector = Utils.generateRandomNumber(1, 3);
 
     switch (randomCarSelector) {
       case 1:
-        return new GasCar(gasLevel, brand, model, tyreCount);
+        return new Car(gasLevel, brand, model, tyreCount, new GasMotor());
       case 2:
-        return new HybridCar(gasLevel, brand, model, tyreCount);
+        return new Car(gasLevel, brand, model, tyreCount, new ElectricMotor());
       case 3:
-        return new ElectricCar(gasLevel, brand, model, tyreCount);
-      case 4:
-        return new FlyingCar(gasLevel, brand, model, tyreCount, gasLevel);
+        return new Car(gasLevel, brand, model, tyreCount, new HybridMotor());
       default:
-        return new GasCar(gasLevel, brand, model, tyreCount);
+        return new Car(gasLevel, brand, model, tyreCount, new GasMotor());
     }
   }
 
