@@ -1,3 +1,3 @@
 public interface GarageSeeder {
-  void seedGarage(Garage garage);
+  void seed(Garage garage);
 }
